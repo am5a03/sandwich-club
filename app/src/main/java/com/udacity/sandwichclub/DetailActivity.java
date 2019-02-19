@@ -69,13 +69,19 @@ public class DetailActivity extends AppCompatActivity {
         desc.setText(sandwich.getDescription());
 
         final List<String> ingredientList = sandwich.getIngredients();
-        for (int i = 0; i < ingredientList.size(); i++) {
-            ingredients.append(ingredientList.get(i) + ", ");
+        for (int i = 0, size = ingredientList.size(); i < ingredientList.size(); i++) {
+            ingredients.append(ingredientList.get(i));
+            if (i < size - 1 ) {
+                ingredients.append(", ");
+            }
         }
 
         final List<String> alsoKnownAsList = sandwich.getAlsoKnownAs();
-        for (int i = 0; i < alsoKnownAsList.size(); i++) {
-            alsoKnownAs.append(alsoKnownAsList.get(i) + ", ");
+        for (int i = 0, size = alsoKnownAsList.size(); i < alsoKnownAsList.size(); i++) {
+            alsoKnownAs.append(alsoKnownAsList.get(i));
+            if (i < size - 1) {
+                alsoKnownAs.append(", ");
+            }
         }
     }
 }
